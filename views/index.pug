@@ -1,0 +1,28 @@
+extends layout
+
+block left
+  p Left sidebar content
+
+block main
+  .container.mx-auto.px-4.py-8
+    h2(class="text-3xl font-bold text-gray-800 mb-4") Welcome to NewsSense
+    p(class="text-gray-600 mb-8") This is the main content area.
+
+    if articles && articles.length > 0
+      div(class="flex flex-col gap-8") // Changed from grid to flex column
+        each article in articles
+          div(class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:bg-gray-50")
+
+            a(href=article.url, target="_blank", rel="noopener noreferrer")
+              div(class="w-full h-48 overflow-hidden")
+                img(class="w-full h-full object-cover object-top", src=article.urlToImage || 'https://placehold.co/600x400/E2E8F0/1A202C?text=No+Image', alt=article.title)
+            div(class="p-6 flex flex-col flex-grow")
+              h3(class="text-xl font-bold text-gray-900 mb-2")
+                a(href=article.url, target="_blank", rel="noopener noreferrer", class="hover:underline")= article.title
+              p(class="text-base text-gray-600 leading-relaxed")= article.description
+    else
+      p(class="text-center text-gray-500") No articles found.
+
+block right
+  p Right sidebar content
+

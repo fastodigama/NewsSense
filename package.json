@@ -1,0 +1,39 @@
+{
+  "name": "newssense",
+  "version": "1.0.0",
+  "description": "NewsSense is a Node.js web app that displays live headlines from global news sources and helps users understand the news better using AI.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastodigama/NewsSense.git"
+  },
+  "keywords": [
+    "news",
+    "sports",
+    "cars",
+    "AI",
+    "summary",
+    "headlines",
+    "social",
+    "inspiration"
+  ],
+  "author": "FadeL Matar",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fastodigama/NewsSense/issues"
+  },
+  "homepage": "https://github.com/fastodigama/NewsSense#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "newsapi": "^2.4.1",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
