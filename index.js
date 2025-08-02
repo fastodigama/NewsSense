@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Route for homepage, renders layout + news in table
 app.get('/', async (req, res) => {
-  const articles = await api.getTrendingNewsByCountry('ca');
+  const articles = await api.getTrendingNewsByCountry('us');
   res.render('index', { title: "Home", articles, year: new Date().getFullYear() });
 });
 

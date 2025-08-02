@@ -2,17 +2,15 @@ import { log } from "console";
 import NewsAPI from "newsapi";
 
 const newsApi = new NewsAPI(process.env.apiKey);
-
+console.log("🔑 API Key:", process.env.apiKey);
 
 
 async function getTrendingNewsByCountry(countryCode) {
   try {
     const response = await newsApi.v2.topHeadlines({
-      q: countryCode,
-      category: "entertainment",
-      
-      pageSize: 15,
-      
+      country: countryCode,
+      category: "general",
+      pageSize: 15
     });
 
    
