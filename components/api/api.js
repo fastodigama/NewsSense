@@ -14,7 +14,7 @@ async function getTrendingNewsByCountry(countryCode) {
     });
 
    
-    console.log("📡 Sources Response:", JSON.stringify(response, null, 2));
+    
 
     return response.articles;
   } catch (error) {
