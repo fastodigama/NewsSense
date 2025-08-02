@@ -10,8 +10,7 @@ block main
       article(class="flex flex-col gap-8") 
         each a in articles
           div(class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:bg-gray-50")
-            // Check if article.urlToImage exists before rendering the image section
-            
+                        
             a(href=a.url, target="_blank", rel="noopener noreferrer")
               div(class="w-full h-48 overflow-hidden")
                 img(class="w-full h-full object-cover", src=a.urlToImage || 'https://placehold.co/600x400/E2E8F0/1A202C?text=No+Image', alt=a.title)
