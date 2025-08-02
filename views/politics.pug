@@ -1,0 +1,21 @@
+extends layout
+
+block main
+  .container.mx-auto.px-4.py-8
+    h2(class="text-3xl font-bold text-gray-800 mb-4") #{title}
+    
+    if articles && articles.length > 0
+      article(class="flex flex-col gap-8") 
+        each a in articles
+          //- Your existing article card code
+          div(class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:bg-gray-50")
+            a(href=a.url, target="_blank", rel="noopener noreferrer")
+              img(class="w-full h-48 object-cover", src=a.urlToImage || placeholderImage, alt=a.title)
+            div(class="p-6 flex flex-col flex-grow")
+              p(class="text-sm text-gray-500 mb-1")= a.formattedDate
+              h3(class="text-xl font-bold mb-2")= a.title
+              p(class="text-gray-600")= a.description
+    else
+      .text-center.py-12
+        p(class="text-gray-500 mb-4") No political news available
+        a(href="/" class="text-blue-600 hover:underline") View top stories
