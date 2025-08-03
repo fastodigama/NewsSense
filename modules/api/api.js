@@ -27,7 +27,7 @@ function formatDate(dateString) {
  * @param {string} country - Country code (e.g., 'us', 'ca')
  * @returns {Promise<Array>} - Array of formatted news articles
  */
-async function getNews(category = null, country = 'us') {
+async function getNews(category = null, country = 'us',query = null) {
     // Construct a unique cache key based on country and category
   const cacheKey = `${country}-${category || 'all'}`;
     // Check if the news data is already cached
@@ -43,6 +43,10 @@ async function getNews(category = null, country = 'us') {
     // Add category to parameters if specified
     if (category) {
       params.category = category;
+    }
+    // Add query to parameters if specified
+    if(query){
+      params.q =query;
     }
 // Log the parameters being used for debugging
     console.log("Fetching news with params:", params);

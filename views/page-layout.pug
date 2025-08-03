@@ -3,7 +3,8 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title NewsSense
+    link(rel="shortcut icon", href="/favicon.ico")
+    title #{title} | NewsSense
     link(rel="stylesheet", href="/css/style.css")
     script(src="https://cdn.tailwindcss.com")
 
@@ -60,10 +61,20 @@ html(lang="en")
 
         //- Loading State
         #modal-loading.text-center.py-8
-          //- Simple spinner
+          //- spinner
           .animate-spin.rounded-full.h-12.w-12.border-b-2.border-blue-600.mx-auto
           p.text-lg.font-semibold.text-gray-700.mt-4 Please wait...
           p.text-gray-500 We're fetching the response for you.
+    
+    
+        #question-modal.hidden
+          h3#question-title.text-xl.font-semibold.text-gray-800.mb-2 What is your question?
+          p#question-text.text-gray-600.mb-4 Please enter your question below.
+          input#question-input(type="text", placeholder="Type your question here...", class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors")
+          .flex.justify-end.space-x-2.mt-4
+            button#cancel-question-btn(type="button", class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors") Cancel
+            button#submit-question-btn(type="submit", class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg transition-colors") Submit
+
 
         //- Result Content
         #modal-content.hidden
