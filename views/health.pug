@@ -2,7 +2,7 @@ extends page-layout
 
 block main
   .container.mx-auto.px-4.py-8(class="max-w-6xl")
-    h2(class="text-3xl font-bold text-gray-800 mb-6") Politics News
+    h2(class="text-3xl font-bold text-gray-800 mb-6") Health News
     
     if articles && articles.length > 0
       div(class=["grid grid-cols-1 gap-4", "sm:grid-cols-2", "lg:grid-cols-4"])
@@ -24,5 +24,5 @@ block main
                 a(href=a.url, target="_blank", rel="noopener noreferrer", class="mt-2 text-sm text-blue-600 hover:underline") Read more
     else
       .text-center.py-12
-        p(class="text-gray-500 mb-4") No politics news available
+        p(class="text-gray-500 mb-4") No health news available
         a(href="/", class="text-blue-600 hover:underline") View top stories

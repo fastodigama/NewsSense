@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title NewsSense
+    link(rel="stylesheet", href="/css/style.css")
+    script(src="https://cdn.tailwindcss.com")
+
+  body(class="bg-gray-100 text-gray-900")
+    header(class="bg-white shadow sticky top-0 z-40")
+      .container.mx-auto.px-4.py-4.flex.justify-between.items-center
+        h1#site-name.text-2xl.font-bold
+          a(href="/" class="text-blue-600 hover:underline") NewsSense
+        
+        //- Mobile menu button (hidden on desktop)
+        button#menu-btn(class="md:hidden focus:outline-none" aria-label="Toggle menu" aria-expanded="false")
+          svg(class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor")
+            path#menu-icon(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16")
+        
+        //- Desktop navigation
+        nav(class="hidden md:block")
+          ul(class="flex space-x-4")
+            li: a(href="/" class="hover:underline") Home
+            li: a(href="/politics" class="hover:underline") Politics
+            li: a(href="/technology" class="hover:underline") Technology
+            li: a(href="/business" class="hover:underline") Business
+            li: a(href="/health" class="hover:underline") Health
+            li: a(href="/entertainment" class="hover:underline") Entertainment
+            li: a(href="/sports" class="hover:underline") Sports
+            li: a(href="/science" class="hover:underline") Science
+        
+        //- Mobile menu
+        #menu(class="md:hidden hidden absolute top-full left-0 right-0 bg-white shadow-lg z-50 border-t")
+          .container.mx-auto.px-4.py-2
+            ul(class="flex flex-col divide-y")
+              li: a(href="/" class="block py-3 px-2 hover:bg-gray-50") Home
+              li: a(href="/politics" class="block py-3 px-2 hover:bg-gray-50") Politics
+              li: a(href="/technology" class="block py-3 px-2 hover:bg-gray-50") Technology                
+              li: a(href="/business" class="block py-3 px-2 hover:bg-gray-50") Business
+              li: a(href="/health" class="block py-3 px-2 hover:bg-gray-50") Health
+              li: a(href="/entertainment" class="block py-3 px-2 hover:bg-gray-50") Entertainment
+              li: a(href="/sports" class="block py-3 px-2 hover:bg-gray-50") Sports
+              li: a(href="/science" class="block py-3 px-2 hover:bg-gray-50") Science
+
+    .layout.container.mx-auto.px-4.py-6.flex.justify-center
+      main.content.w-full.bg-white.p-4.rounded.shadow.flex.flex-row.flex-wrap.gap-4
+        block main
+
+    footer(class="bg-gray-900 mt-10 py-4 text-center text-sm text-gray-500")
+      p © #{year} NewsSense. All rights reserved.
+
+    script(src="/js/main.js")

@@ -35,11 +35,35 @@ app.get('/', async (req, res) => {
   res.render('index', { articles });
 });
 
-//politics
+
 
 app.get('/politics', async (req, res) => {
   const articles = await api.getNews('general');
   res.render('politics', { articles });
+});
+app.get('/technology', async (req, res) => {
+  const articles = await api.getNews('technology');
+  res.render('technology', { articles });
+});
+app.get('/business', async (req, res) => {
+  const articles = await api.getNews('business');
+  res.render('business', { articles });
+});
+app.get('/health', async (req, res) => {
+  const articles = await api.getNews('health');
+  res.render('health', { articles });
+});
+app.get('/entertainment', async (req, res) => {
+  const articles = await api.getNews('entertainment');
+  res.render('entertainment', { articles });
+});
+app.get('/sports', async (req, res) => {
+  const articles = await api.getNews('Sports');
+  res.render('Sports', { articles });
+});
+app.get('/science', async (req, res) => {
+  const articles = await api.getNews('science');
+  res.render('science', { articles });
 });
 
 /**
