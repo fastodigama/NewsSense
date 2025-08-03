@@ -1,15 +1,15 @@
 extends page-layout
 
 block main
+  
   .container.mx-auto.px-4.py-8(class="max-w-6xl")
     h2(class="text-3xl font-bold text-gray-800 mb-6") Health News
-    
+
     if articles && articles.length > 0
       div(class=["grid grid-cols-1 gap-4", "sm:grid-cols-2", "lg:grid-cols-4"])
         each a in articles
           article(class="bg-white rounded-md shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow")
             a(href=a.url, target="_blank", rel="noopener noreferrer" class="flex flex-col h-full")
-              
               if a.urlToImage
                 img(class="w-full h-32 object-cover" src=a.urlToImage alt=a.title onerror="this.src='https://via.placeholder.com/600x400?text=No+Image';this.onerror=null")
               else
@@ -22,7 +22,14 @@ block main
                 if a.source && a.source.name
                   p(class="text-xs text-gray-500 mt-auto") Source: #{a.source.name}
                 a(href=a.url, target="_blank", rel="noopener noreferrer", class="mt-2 text-sm text-blue-600 hover:underline") Read more
+
+            // Buttons below article content
+            div(class="px-3 pb-3 flex flex-col space-y-2")
+              button(class="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition" data-action="summarize" data-url=a.url) Summarize
+              button(class="bg-green-600 text-white text-sm px-4 py-2 rounded hover:bg-green-700 transition" data-action="explain" data-url=a.url) Explain Like I’m 5
+              button(class="bg-purple-600 text-white text-sm px-4 py-2 rounded hover:bg-purple-700 transition" data-action="ask" data-url=a.url) Ask Questions
     else
       .text-center.py-12
-        p(class="text-gray-500 mb-4") No health news available
+        p(class="text-gray-500 mb-4") No Health news available
         a(href="/", class="text-blue-600 hover:underline") View top stories
+

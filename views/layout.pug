@@ -53,4 +53,25 @@ html(lang="en")
     footer(class="bg-gray-900 mt-10 py-4 text-center text-sm text-gray-500")
       p © #{year} NewsSense. All rights reserved.
 
+    //- MODAL: This is the updated modal structure
+    #modal.hidden.fixed.inset-0.bg-gray-800.bg-opacity-75.flex.items-center.justify-center.z-50.p-4.transition-opacity.duration-300
+      //- Modal Content Container
+      #modal-container.bg-white.rounded-lg.shadow-xl.p-6.w-full.max-w-2xl.relative.transform.transition-all.duration-300.scale-95
+        //- Close Button
+        button(onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 transition-colors" aria-label="Close modal")
+          svg(class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24")
+            path(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12")
+
+        //- Loading State
+        #modal-loading.text-center.py-8
+          //- Simple spinner
+          .animate-spin.rounded-full.h-12.w-12.border-b-2.border-blue-600.mx-auto
+          p.text-lg.font-semibold.text-gray-700.mt-4 Please wait...
+          p.text-gray-500 We're fetching the response for you.
+
+        //- Result Content
+        #modal-content.hidden
+          //- Response will be injected here by JavaScript
+
     script(src="/js/main.js")
+    script(src="/js/newsActions.js")

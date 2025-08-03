@@ -32,6 +32,7 @@
     "express": "^5.1.0",
     "newsapi": "^2.4.1",
     "node-cache": "^5.1.2",
+    "openai": "^5.11.0",
     "pug": "^3.0.3"
   },
   "devDependencies": {

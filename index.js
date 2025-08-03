@@ -7,15 +7,21 @@
 import express, { response } from "express";
 import path from "path";
 import "dotenv/config";
-import api from "./components/api/api.js";
+import summarizeRouter from "./modules/api/summarizeRouter.js"
+import api from "./modules/api/api.js";
+
+
 /**
  * App Variables
  */
 const __dirname = import.meta.dirname;
 
 //set up Express app
+
 const app = express();
 const port = process.env.PORT || 8888;
+app.use(express.json());
+
 /**
  *  App Configuration
  */
@@ -24,6 +30,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 //setup public folder
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/api", summarizeRouter);
 
 /**
  * Routes Definitions
