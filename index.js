@@ -11,7 +11,8 @@ import api from "./modules/api/api.js";
 // Define current directory (ESM-compatible)
 // Fix __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = import.meta.dirname;
+const __dirname = path.dirname(__filename);
+
 
 // Create Express app and set port
 const app = express();
