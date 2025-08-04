@@ -12,7 +12,7 @@ html(lang="en")
     header(class="bg-white shadow sticky top-0 z-40")
       .container.mx-auto.px-4.py-4.flex.justify-between.items-center
         h1#site-name.text-2xl.font-bold
-          a(href="/" class="text-blue-600 hover:underline") NewsSense
+          a(href="/" class="hover:none") NewsSense
         
         //- Mobile menu button (hidden on desktop)
         button#menu-btn(class="lg:hidden focus:outline-none" aria-label="Toggle menu" aria-expanded="false")
@@ -23,14 +23,15 @@ html(lang="en")
         //- Desktop navigation
         nav(class="hidden lg:block")
           ul(class="flex space-x-4")
-            li: a(href="/" class="hover:underline") Home
-            li: a(href="/politics" class="hover:underline") Politics
-            li: a(href="/technology" class="hover:underline") Technology
-            li: a(href="/business" class="hover:underline") Business
-            li: a(href="/health" class="hover:underline") Health
-            li: a(href="/entertainment" class="hover:underline") Entertainment
-            li: a(href="/sports" class="hover:underline") Sports
-            li: a(href="/science" class="hover:underline") Science
+            li: a(href="/") Home
+            li: a(href="/politics") Politics
+            li: a(href="/technology") Technology
+            li: a(href="/business") Business
+            li: a(href="/health") Health
+            li: a(href="/entertainment") Entertainment
+            li: a(href="/sports") Sports
+            li: a(href="/science") Science
+
         
         //- Mobile menu
         #menu(class="lg:hidden hidden absolute top-full left-0 right-0 bg-white shadow-lg z-50 border-t")
