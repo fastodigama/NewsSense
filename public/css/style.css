@@ -8,3 +8,9 @@ body {
   font-variation-settings:
     "wdth" 100;
 }
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
