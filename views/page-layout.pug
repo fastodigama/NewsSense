@@ -50,7 +50,11 @@ html(lang="en")
       block main
 
     footer(class="bg-gray-800 mt-10 py-4 text-center text-sm text-gray-400")
-      p © #{year} NewsSense. All rights reserved.
+      .container.mx-auto.px-4.py-4.flex.justify-between.items-center.text-gray-50
+          h1#site-name.text-2xl.font-bold
+            a(href="/" class="hover:none") NewsSense
+          p © #{year} NewsSense. All rights reserved.
+      
 
     //- MODAL
     #modal.hidden.fixed.inset-0.bg-gray-800.bg-opacity-75.flex.items-center.justify-center.z-50.p-4.transition-opacity.duration-300
