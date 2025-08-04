@@ -28,13 +28,10 @@
   },
   "homepage": "https://github.com/fastodigama/NewsSense#readme",
   "dependencies": {
-    "@mozilla/readability": "^0.6.0",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "jsdom": "^26.1.0",
     "newsapi": "^2.4.1",
     "node-cache": "^5.1.2",
-    "node-fetch": "^3.3.2",
     "openai": "^5.11.0",
     "pug": "^3.0.3"
   },

@@ -44,11 +44,11 @@ html(lang="en")
                 li: a(href="/sports" class="block py-3 px-2 hover:bg-gray-50") Sports
                 li: a(href="/science" class="block py-3 px-2 hover:bg-gray-50") Science
 
-    .layout.layout.container.mx-auto.px-4.py-6(class="grid grid-cols-1 md:grid-cols-12 gap-6")
-      main.content(class="bg-white p-4 rounded shadow md:col-span-8")
+    .layout.container.mx-auto.px-4.py-6.grid.grid-cols-12.gap-6
+      main.content.col-span-8.bg-white.p-4.rounded.shadow
         block main
 
-      aside.right-sidebar(class="bg-white p-4 rounded shadow md:col-span-4")
+      aside.right-sidebar.col-span-4.bg-white.p-4.rounded.shadow
         block right
 
     footer(class="bg-gray-900 mt-10 py-4 text-center text-sm text-gray-500")

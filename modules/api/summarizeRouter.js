@@ -25,7 +25,7 @@ router.post("/summarize", async (req, res) => {
   try {
     // Send the prompt to OpenAI's chat completion endpoint using the GPT-4.1 model
     const response = await openai.chat.completions.create({
-      model: "o3-mini", // Specify the model version
+      model: "gpt-4.1", // Specify the model version
       messages: [{ role: "user", content: prompt }], // Provide the user message
     });
 

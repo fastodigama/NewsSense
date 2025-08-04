@@ -8,12 +8,3 @@ body {
   font-variation-settings:
     "wdth" 100;
 }
-/* Default: stacked layout for small screens */
-
-/* Side-by-side layout for medium screens and up */
-@media (max-width: 1000px) {
-  .layout{
-    grid-template-columns: 2ft 1 ft;; /* main takes 2/3, aside takes 1/3 */
-  }
-  
-}
