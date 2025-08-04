@@ -1,56 +1,60 @@
+/* Import Noto Serif font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Base font styling for the entire page */
 body {
-  font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-family: "Noto Serif", serif;           /* Use Noto Serif for elegant serif typography */
+  font-optical-sizing: auto;                  /* Automatically adjust font rendering based on size */
+  font-weight: 500;                           /* Medium font weight for balanced readability */
+  font-style: normal;                         /* Regular (non-italic) font style */
+  font-variation-settings: "wdth" 100;        /* Set font width axis to default (100%) */
 }
 
-li a:hover{
+/* Add underline effect when hovering over links inside list items */
+li a:hover {
   text-decoration: underline;
 }
+
+/* Responsive layout for screens 768px and wider */
 @media (min-width: 768px) {
-   .layout-split {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
+  .layout-split {
+    display: grid;                            /* Enable grid layout */
+    grid-template-columns: 2fr 1fr;           /* Two columns: main content (2 parts), sidebar (1 part) */
+    gap: 1.5rem;                              /* Space between columns */
   }
 
   .layout-stacked {
-    display: block !important;
+    display: block !important;                /* Force vertical stacking layout */
   }
 }
 
+/* Styles for medium-sized screens (900px to 1024px) */
 @media screen and (min-width: 900px) and (max-width: 1024px) {
-  .layout-split,.layout-stacked  {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem;
+  .layout-split,
+  .layout-stacked {
+    display: grid;                            /* Use grid layout for both layout types */
+    grid-template-columns: 2fr 1fr;           /* Maintain 2:1 column ratio */
+    gap: 1.5rem;                              /* Space between columns */
+    padding: 1.5rem;                          /* Internal padding around layout */
   }
 
   #modal-container {
-    max-width: 600px;
-    padding: 2rem;
+    max-width: 600px;                         /* Limit modal width for  readability */
+    padding: 2rem;                            /* Add padding inside modal */
   }
 
   #question-input {
-    font-size: 1.125rem;
-    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;                      /*  larger font for better reading */
+    padding: 0.75rem 1.5rem;                  /*  padding for input */
   }
 
   h1#site-name {
-    font-size: 1.5rem;
+    font-size: 1.5rem;                        /* Adjust heading size for medium screens */
   }
-  /* 
-  Custom utility class to show elements on tablet screens (768px–1024px).
-  The colon is escaped (\:) because CSS treats ":" as a pseudo-class selector.
-  This matches Tailwind-style class names like "tablet:block".
-*/
+
+  /* Custom utility class to show elements on tablet screens (768px–1024px) */
+  /* The colon is escaped (\:) because CSS treats ":" as a pseudo-class selector */
   .tablet\:block {
-    display: block !important;
+    display: block !important;                /* Force block display on tablets */
   }
 }
