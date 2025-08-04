@@ -15,12 +15,12 @@ html(lang="en")
           a(href="/" class="text-blue-600 hover:underline") NewsSense
         
         //- Mobile menu button (hidden on desktop)
-        button#menu-btn(class="md:hidden focus:outline-none" aria-label="Toggle menu" aria-expanded="false")
+        button#menu-btn(class="lg:hidden focus:outline-none" aria-label="Toggle menu" aria-expanded="false")
           svg(class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor")
             path#menu-icon(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16")
         
         //- Desktop navigation
-        nav(class="hidden md:block")
+        nav(class="hidden lg:block")
             ul(class="flex space-x-4")
                 li: a(href="/" class="hover:underline") Home
                 li: a(href="/politics" class="hover:underline") Politics
@@ -32,7 +32,7 @@ html(lang="en")
                 li: a(href="/science" class="hover:underline") Science
         
         //- Mobile menu
-        #menu(class="md:hidden hidden absolute top-full left-0 right-0 bg-white shadow-lg z-50 border-t")
+        #menu(class="lg:hidden hidden absolute top-full left-0 right-0 bg-white shadow-lg z-50 border-t")
           .container.mx-auto.px-4.py-2
             ul(class="flex flex-col divide-y")
                 li: a(href="/" class="block py-3 px-2 hover:bg-gray-50") Home
@@ -44,14 +44,14 @@ html(lang="en")
                 li: a(href="/sports" class="block py-3 px-2 hover:bg-gray-50") Sports
                 li: a(href="/science" class="block py-3 px-2 hover:bg-gray-50") Science
 
-    .layout.container.mx-auto.px-4.py-6.grid
+    .layout-split.container.mx-auto.px-4.py-6.grid
       main.content.mx-auto.bg-white.p-4.rounded.shadow
         block main
 
       aside.right-sidebar.bg-white.p-4.rounded.shadow
         block right
 
-    footer(class="bg-gray-900 mt-10 py-4 text-center text-sm text-gray-500")
+    footer(class="bg-gray-800 mt-10 py-4 text-center text-sm text-gray-400")
       p © #{year} NewsSense. All rights reserved.
 
     //- MODAL

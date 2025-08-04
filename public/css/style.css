@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
- font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -10,7 +10,44 @@ body {
 }
 
 @media (min-width: 768px) {
-  .layout {
+   .layout-split {
+    display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .layout-stacked {
+    display: block !important;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+  .layout-split,.layout-stacked  {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  #modal-container {
+    max-width: 600px;
+    padding: 2rem;
+  }
+
+  #question-input {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  h1#site-name {
+    font-size: 1.5rem;
+  }
+  /* 
+  Custom utility class to show elements on tablet screens (768px–1024px).
+  The colon is escaped (\:) because CSS treats ":" as a pseudo-class selector.
+  This matches Tailwind-style class names like "tablet:block".
+*/
+  .tablet\:block {
+    display: block !important;
   }
 }
