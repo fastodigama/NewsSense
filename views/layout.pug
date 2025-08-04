@@ -45,12 +45,13 @@ html(lang="en")
                 li: a(href="/sports" class="block py-3 px-2 hover:bg-gray-50") Sports
                 li: a(href="/science" class="block py-3 px-2 hover:bg-gray-50") Science
 
-    .layout-split.container.mx-auto.px-4.py-6.grid
-      main.content.mx-auto.bg-white.p-4.rounded.shadow
+    div(class="layout-split container mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-6")
+      main(class="bg-white p-4 rounded shadow lg:col-span-2")
         block main
 
-      aside.right-sidebar.bg-white.p-4.rounded.shadow
+      aside(class="bg-white p-4 rounded shadow lg:col-span-1")
         block right
+
 
     footer(class="bg-gray-800 mt-10 py-4 text-center text-sm text-gray-400")
       p © #{year} NewsSense. All rights reserved.
