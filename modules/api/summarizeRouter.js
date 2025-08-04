@@ -9,7 +9,7 @@ const router = express.Router();
 
 // Initialize the OpenAI client with your API key from environment variables
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // Ensure this is set in your environment
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 // Define a POST route at /summarize to handle text summarization requests
@@ -23,7 +23,7 @@ router.post("/summarize", async (req, res) => {
   }
 
   try {
-    // Send the prompt to OpenAI's chat completion endpoint using the GPT-4.1 model
+    // Send the prompt to OpenAI's chat completion endpoint using the o3-mini model
     const response = await openai.chat.completions.create({
       model: "o3-mini", // Specify the model version
       messages: [{ role: "user", content: prompt }], // Provide the user message
