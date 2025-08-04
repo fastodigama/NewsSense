@@ -43,7 +43,7 @@ submitBtn.addEventListener('click', () => {
     const answer = questionInput.value;
     questionInput.value = ""; // Clear the input field.
     modalWrapper.classList.add('hidden'); // Hide the entire modal.
-    questionModal.classList.add('hidden'); // Hide the question box.
+    questionModal.classList.add('hidden'); // Hide the question box specifically.
     resolvePrompt(answer); // Resolve the Promise with the user's input.
 });
 
